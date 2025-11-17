@@ -48,6 +48,7 @@ console.log("Mi numero favorito es de tipo: ",typeof(miNumeroFav));
 
 // Muestra un console.log que diga ‘Mi nombre es Euralio y mi numero favorito es 7” concatenado variables declaradas más arriba.
 console.log(`Mi nombre es ${miNombre} y mi numero favorito es ${miNumeroFav}`);
+console.log("Mi nombre es ",miNombre," y mi numero favorito es ",miNumeroFav);
 
 // Muestra por consola “Seré un crack en JavaScript al terminar el bootcamp” en mayúsculas.
 console.log("Seré un crack en JavaScript al terminar el bootcamp".toUpperCase());
@@ -61,6 +62,7 @@ let solo5Caracteres="Hola soy un crack";
 console.log("Solo muestro los 5 primeros caracteres: ",solo5Caracteres.slice(0,5));
 console.log("Solo muestro los 5 primeros caracteres: ",solo5Caracteres.slice(0));
 console.log("Solo muestro los 5 primeros caracteres: ",solo5Caracteres.slice(5));
+console.log("Solo muestro los 5 primeros caracteres: ",solo5Caracteres.substring(0,5));
 
 // Convierte la variable miNumeroFav en una string y luego muestra por consola el tipo de dato que es dicha variable
 let miNumeroFavToString=miNumeroFav.toString();
@@ -70,6 +72,9 @@ let numeroFavo=5;
 console.log(`Mi numero FAV es ${numeroFavo} y es de tipo ${typeof(numeroFavo)}`)
 numeroFavo="Hola";
 console.log(`Ahora Mi numero FAV es ${numeroFavo} y es de tipo ${typeof(numeroFavo)} usando let`)
+
+let miNumeroFavToString2=+"55555";
+console.log(`Ahora la variable miNumeroFavToString es de tipo ${typeof(miNumeroFavToString2)} ${miNumeroFavToString2}`);
 
 // Crea una variable, concaténala utilizando template literal, guarda el template literal en otra variable y sacala por consola.
 let concatenaEjercicio="HOLA";
@@ -81,6 +86,13 @@ let valorDePI=Math.PI;
 console.log("PI es :",valorDePI);
 console.log(`Solo los dos primeros decimales de PI son: ${Math.trunc(valorDePI*100)/100}`);
 console.log("------toFixed() redondea y pasa a tipo string, por lo que habria que usar parseFloat()-----");
+console.log(`${typeof(+valorDePI.toFixed(2))}`)
+
+const num1="24"
+const num2="45"
+console.log(num1+num2)
+
+console.log(typeof(NaN))
 
 // Crear variable de nombre arrayVacio cuyo valor sea un array vacío
 let arrayVacio=[];
@@ -99,6 +111,23 @@ let arrayNumerosPares=[0,2,4,6,8];
 console.log(`La variable arrayNumerosPares es de tipo ${typeof(arrayNumerosPares)} y su valor es ${arrayNumerosPares}`);
 console.log("-----------Asi o haciendo calculos??---------------");
 
+
+
+console.log(arrayNumeros.length)
+let arrayParNuevo=[]
+for(let i=0;i<arrayNumeros.length;i++){
+    if(i%2===0){
+       console.log("Estoy en el IF",i) 
+       arrayParNuevo.push(i)
+    }
+}
+console.log(arrayParNuevo)
+
+
+
+
+
+
 // Crear variable de nombre arrayNumerosNeg declarada con un array de números del 0 al -9 (0, -1, -2...)
 let arrayNumerosNeg=[0,-1,-2,-3,-4,-5,-6,-7,-8,-9];
 console.log(`La variable arrayNumerosNeg es de tipo ${typeof(arrayNumerosNeg)} y su valor es ${arrayNumerosNeg}`);
@@ -111,12 +140,18 @@ console.log(`La variable holaMundo es de tipo ${typeof(holaMundo)} y su valor es
 let loGuardoTodo=["hola","que",23,42.33,"tal"];
 console.log(`La variable loGuardoTodo es de tipo ${typeof(loGuardoTodo)} y su valor es ${loGuardoTodo}`);
 
+
+
+console.log(`La variable loGuardoTodo es de tipo ${typeof(loGuardoTodo[2])} y su valor es ${loGuardoTodo[2]}`);
+
 // Crear variable de nombre arrayDeArrays declarada con valor array: [[756, 'nombre'], [225, 'apellido'], [298, 'direccion']]
 let arrayDeArrays=[[756,"nombre"],[225,"apellido"],[298,"direccion"]];
 console.log(`La variable arrayDeArrays es de tipo ${typeof(arrayDeArrays)} y su valor es ${arrayDeArrays}`);
+console.log("!!!!!!!!")
+console.log(`${arrayDeArrays[2][0]}`)
 
-// Muestra por consola la longitud del array “loGuardoTodo”
-console.log(`La longitud del array loGuardoTodo es ${loGuardoTodo.length}`);
+// Muestra por consola la longitud del array “arrayDeArrays”
+console.log(`La longitud del array arrayDeArrays es ${typeof(arrayDeArrays[1][0].toString().length)}`);
 
 // Crea un nuevo elemento y añadelo al final del array “loGuardoTodo” y muestralo por consola
 let valorNuevoArray="valor nuevo";
@@ -128,13 +163,25 @@ console.log(`El valor de loGuardoTodo usando 'unshift' es ${loGuardoTodo}`);
 console.log(`La longitud del array loGuardoTodo es ${loGuardoTodo.length}`);
 
 // Ordena de mayor a menor la variable arrayNumeros y muestrala por consola
+const arrayAleatorio=[5,3,6,3,9,8,6,1,10]
+console.log(`Mi array es: ${arrayAleatorio}`)
+const arrayOrdenado=arrayAleatorio.sort(function (a, b) {
+  return a - b;
+});
+console.log(`El array ordenado de mayor a menor queda: ${arrayOrdenado}`)
 
 
 // Ordena de menor a mayor la variable arrayNumeros2 y muestrala por consola
+/* Igual pero Usando b-a */
 
 // Muestra por consola la propiedad ‘que’ de la variable loGuardoTodo
+console.log(`${loGuardoTodo[2]}`)
 
 // Añade la propiedad ‘Euralio’ en la array loGuardoTodo y muestrala por consola
+console.log(`${loGuardoTodo}`)
+const resultado=loGuardoTodo.push("Euralio")
+console.log(`Voy a añadir Euralio al array loGuardoTodo asin : ${loGuardoTodo}`)
+console.log(resultado)
 
 // Documentación que puedes buscar para resolverlos: Variables, Tipos de datos, Metodos para strings, numeros y arrays, Arrays
 
@@ -142,44 +189,110 @@ console.log(`La longitud del array loGuardoTodo es ${loGuardoTodo.length}`);
 // -------------------------------------- Próximos ejercicios --------------------------------------
 
 // Crea un objeto de nombre Coche que tenga las propiedades: marca, modelo y matrícula con sus respectivos valores
+const coche={
+    marca:"BYD",
+    modelo:"EldelGer",
+    matricula:"8954TXS",
+    color:"azul"
+}
+console.log(coche,typeof(coche))
+
 
 // Crea un objeto de nombre Casa que tenga las propiedades: codPostal, calle, portal y piso con sus respectivos valores
+const casa={
+    codPostal:46300,
+    calle:"las casas",
+    portal:12,
+    piso:3
+}
+console.log(casa,typeof(casa))
+
 
 // Crea un objeto de nombre FullStackDeveloper que tenga las propiedades: array lenguajes(ej. ‘javascript’,’php’), array proyectos(ej. ‘mi página personal’,etc)
+const fullStackDeveloper={
+    lenguajes:["javascript","php"],
+    proyectos:["Mi primera chamba","Hola Mundo"]
+}
+console.log(fullStackDeveloper,typeof(fullStackDeveloper))
 
-// Crea un objeto de nombre Perro que tenga las propiedades: nombre, raza, color y edad con sus respectivos valores
-
-// Crea un objeto de nombre Noticia que tenga las propiedades: titular y cuerpo con sus respectivos valores
-
-// Crea un objeto de nombre Persona que tenga las propiedades: nombre, apellidos y edad con sus respectivos valores
-
-// Muestra por consola el nombre de la variable Persona
 
 // Muestra por consola el lenguaje javascript de la variable FullStackDeveloper
+console.log(fullStackDeveloper.lenguajes[0])
+console.log(fullStackDeveloper["lenguajes"][0])
 
-// Crea un objeto de nombre Portatil que tenga la propiedad marca, accede a esta propiedad con .marca y muestrala por consola
-
-// Obtén el valor de la propiedad marca del objeto anteriormente creado (Portatil) con ["marca"] y muestrala por consola
 
 // Crea un objeto de nombre Concierto con una propiedad llamada grupos que es un array, obtén el valor de la propiedad y muestrala por consola
+const concierto={
+    grupos:["Ska-p","ItacaBand"]
+}
+console.log(concierto.grupos)
 
 // Crea un objeto de nombre Led, con las propiedades: rojo, verde y azul, obtén el valor de las propiedades guardándolo en la variable array RGB[Rojo, Verde, Azul] y muestra este array por consola
+const led={
+    rojo:"rojo",
+    verde:"verde",
+    azul:"azul"
+}
+const RGB=[led.rojo,led.verde,led.azul]
+console.log(RGB)
 
-// Crea un objeto de nombre O_Error con la propiedad código, obtén el valor de la propiedad y muestrala por consola
-
-// Crea un objeto de nombre Grupo con la propiedad integrantes (array),obtén el valor de la propiedad guardándolo en la variable integrantes y muestra por consola a uno de los integrantes
 
 // Crea un objeto de nombre Impresora con la propiedad objeto tinta{rojo, verde, azul}, obtén el valor de la propiedad guardándolo en la variable nivelesTinta y muestrala por consola
+const impresora={
+    tinta:{rojo:"rojo",verde:"verde",azul:"azul"}
+}
+console.log(impresora)
+
+/* const impresora2={
+    tinta:{rojo,verde,azul}
+}
+console.log(impresora2)
+ */
+const nivelesTinta={
+    rojo:impresora.tinta.rojo,
+    verde:impresora.tinta.verde,
+    azul:impresora.tinta.azul
+}
+console.log(nivelesTinta)
 
 // Crea un objeto de nombre Movil con la propiedad especificaciones obtén el valor de la propiedad con ["especificaciones"] guardándolo en la variable especificaciones y muestrala por consola
+const movil={
+    especificaciones:"realme 19"
+}
+const especificaciones=movil["especificaciones"]
+console.log(especificaciones)
+
 
 // Dado el objeto de nombre Portatil con la propiedad marca, modifica el valor de la propiedad marca por el valor “MSI”, consolea el resultado
+const portatil={
+    marca:"hp"
+}
+console.log(portatil)
+portatil.marca="MSI"
+console.log(portatil)
 
 // Dado el objeto de nombre Concierto añade el valor Guns N' Roses a la propiedad grupos, consolea el resultado
+console.log(concierto)
+concierto.grupos.push("Guns N' Roses")
+console.log(concierto)
+console.log("OJOOOO esta usando el mismo espacio de memoria, por lo que chafa el objeto concierto")
 
 // Dado el objeto de nombre Concierto, crea la propiedad fecha, dale un valor y después modifica el valor de la propiedad por el valor new Date() (fecha de hoy), consolea el resultado
+concierto.fecha=20102024
+console.log(concierto)
+let newDate=Date()
+console.log(newDate)
+concierto.fecha=newDate
+console.log(concierto)
 
 // Dado el objeto de nombre Grupo modifica el valor de la propiedad integrantes quitándole un integrante, consolea el número de integrantes actual (ojo! el número, no los nombres de los integrantes)
+const grupo={
+    integrantes:["guitarra","bateria","voz","trompeta"]
+}
+console.log(grupo)
+grupo.integrantes.shift()
+console.log(grupo.integrantes.length)
+
 
 // Documentación que puedes buscar para resolverlos: Objetos, como acceder a objetos, como modificar objetos 
 
