@@ -397,18 +397,59 @@ for(let i=0;i<array.length;i++){
 }
 
 // Crea una variable diaFestivo que sea de tipo boolean. Crea un ternario que si diaFestivo es true devuelve un console.log de ‘Hoy no trabajo’ y  si es false ‘Hoy trabajo’
-
+let diaFestivo=true
+// diaFestivo ? "Hoy no trabajo" : "Hoy Trabajo"
+diaFestivo ? console.log("Hoy no trabajo") : console.log("Hoy Trabajo")
 
 // Crea una variable arrayBucle tipo array vacía, rellénala con números del 4 al 18 utilizando un bucle
-
+let arrayBucle=[]
+for(let i=4;i<=18;i++){
+//   console.log(i)
+  arrayBucle[i-4]=i
+}
+console.log(arrayBucle)
 
 // Recorre la variable creada anteriormente arrayBucle ,suma todos sus elementos y guárdalos en una variable de nombre resultado
+let resultado2=0
+// console.log(typeof(resultado2))
+// console.log(typeof(arrayBucle))
+// console.log(typeof(arrayBucle[0]))
+for(let i=0;i<15;i++){
+//   console.log(i)
+  resultado2=resultado2+arrayBucle[i]
+//   console.log(resultado2)
+}
+console.log(resultado2)
+// console.log(typeof(resultado2))
 
 
-// Dado el siguiente array, [‘Con’, ‘Sofia’, ‘aprendiendo’, ‘bucles’], recorrelo utilizando el bucle “for of” y muestra por consola todos sus elementos, después recórrelo utilizando el bucle “for in” mostrando también por consola todos sus elementos
+// Dado el siguiente array, [‘Con’, ‘Gere’, ‘aprendiendo’, ‘bucles’], recorrelo utilizando el bucle “for of” y muestra por consola todos sus elementos, después recórrelo utilizando el bucle “for in” mostrando también por consola todos sus elementos
+const arrayEjercicio=["Con", "Gere", "aprendiendo", "bucles"]
+let ejercicioForof="Usando ForOF"
+let ejercicioForin="Usando ForIn"
 
+for (const element of arrayEjercicio) {
+    // console.log(element)
+  ejercicioForof=ejercicioForof + " " + element
+}
+console.log(ejercicioForof)
+
+for (const key in arrayEjercicio) {
+//   console.log(key)
+//   console.log(arrayEjercicio[key])
+  ejercicioForin=ejercicioForin + " " + arrayEjercicio[key]
+}
+console.log(ejercicioForin)
 
 // Crea un bucle utilizando “while” que itere 20 veces y muestre por consola “Patata” cada vez que el número de la iteración sea múltiplo de 3
+let x=0
+while (x<=20) {
+//   console.log(x)
+  if(x%3 == 0 && x != 0){
+    console.log(`Patata, valor de x es:${x}`)
+  }
+    x++
+}
 
 
 // Crea un programa el cual te pregunte por una nota del 0 al 10 y dependiendo del número, te devuelva la siguiente clasificación.
@@ -417,12 +458,72 @@ for(let i=0;i<array.length;i++){
 // 5 - 6: Suficiente.
 // 7 - 8: Notable.
 // 9 - 10: Sobresaliente.
+function examen(a){
+  let nota /* esta la usamos para hacer los 4 casos mostrados arriba */
+  let clasificacion=""
+  
+  if(a<5){
+        nota=0
+    } else if(a<7){
+        nota=1
+    } else if(a<9){
+        nota=2
+    }else if(a<11){
+        nota=3
+    }
 
+    switch (nota) {
+        case 0:
+         clasificacion="Insuficiente"
+         break;
+        case 1:
+         clasificacion="Suficiente"
+         break;
+        case 2:
+         clasificacion="Notable"
+         break;
+        case 3:
+         clasificacion="Sobresaliente"
+         break;
+        default:
+         clasificacion="Sin clasificar"
+         break;
+    }
+// console.log(a)
+// console.log(nota)
+console.log(clasificacion)
+}
+valor = prompt("Indica una nota del 0 al 10:", 5)
+if(valor !== null){
+  valorConvertido = parseInt(valor)
+  examen(valorConvertido);
+}
+
+
+// ---------------FUNCIONES-----------------------
 
 // Crea una función resta que espere dos parámetros a y b y que devuelva la resta de los mismos.
+function resta(a,b){
+    if(typeof(a) !== "number" || typeof(b) !== "number"){
+    return "No has introducido datos validos"
+}    else{
+    return a - b
+}
+}
+
+let resultadoResta = resta(7,2)
+console.log("El resultado es ",resultadoResta)
 
 
-// Crea la función duplicaNumero debe recibir un tipo number y devolver el doble del valor recibido. Si la función no recibe un dato tipo number debe devolver el string ‘Debo ser ejecutada con un número’
-
+// Crea la función duplicaNumero debe recibir un tipo number y devolver el doble del valor recibido. Si la función no recibe un dato tipo number debe devolver el string 'Debo ser ejecutada con un número’
+function duplicaNumero(a){
+    if(typeof(a)!=="number"){
+        return "Debo ser ejecutada con un numero"
+    }   else{
+        return a*a
+    }
+}
+let resultadoDuplicaNumero = duplicaNumero(20)
+console.log(resultadoDuplicaNumero)
 
 
