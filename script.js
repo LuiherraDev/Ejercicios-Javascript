@@ -405,7 +405,8 @@ diaFestivo ? console.log("Hoy no trabajo") : console.log("Hoy Trabajo")
 let arrayBucle=[]
 for(let i=4;i<=18;i++){
 //   console.log(i)
-  arrayBucle[i-4]=i
+//   arrayBucle[i-4]=i
+  arrayBucle.push(i)
 }
 console.log(arrayBucle)
 
@@ -416,10 +417,11 @@ let resultado2=0
 // console.log(typeof(arrayBucle[0]))
 for(let i=0;i<15;i++){
 //   console.log(i)
-  resultado2=resultado2+arrayBucle[i]
+//   resultado2=resultado2+arrayBucle[i]
+resultado2+=arrayBucle[i]
 //   console.log(resultado2)
 }
-console.log(resultado2)
+console.log("!!!!!!!!!!!!!!",resultado2)
 // console.log(typeof(resultado2))
 
 
@@ -474,6 +476,8 @@ function examen(a){
 
     switch (nota) {
         case 0:
+        // case 1:
+        // case 2:
          clasificacion="Insuficiente"
          break;
         case 1:
@@ -494,8 +498,9 @@ function examen(a){
 console.log(clasificacion)
 }
 valor = prompt("Indica una nota del 0 al 10:", 5)
-if(valor !== null){
-  valorConvertido = parseInt(valor)
+console.log("!!!!!!!!!!!",valor)
+if(valor){
+    valorConvertido = parseInt(valor)
   examen(valorConvertido);
 }
 
@@ -527,3 +532,120 @@ let resultadoDuplicaNumero = duplicaNumero(20)
 console.log(resultadoDuplicaNumero)
 
 
+// STRINGS
+// SPLIT
+const url = "https://www.ejemplo.com/categoria/producto"
+const partesUrl = url.split("/")
+console.log(partesUrl)
+console.log(partesUrl[4])
+console.log(partesUrl[partesUrl.length - 1]);
+
+// ARRAYS
+const arrayDeGer = [1,2,3,4,5]
+const arrayDeLuis = ["a","b","c","d","e"]
+
+// CONCAT
+console.log(arrayDeGer.concat(arrayDeLuis))
+
+// FOREACH
+const miResultado = arrayDeLuis.forEach( elemento => {
+  console.log(elemento + "x")
+})
+
+console.log(miResultado)  // undefined
+
+// INDEXOF
+console.log(arrayDeGer.indexOf(3))
+console.log(arrayDeGer.indexOf(10))
+console.log(arrayDeLuis.indexOf("e"))
+
+// INCLUDES
+console.log(arrayDeGer.includes(2))
+console.log(arrayDeLuis.includes("z"))  
+
+// JOIN
+console.log(arrayDeGer.join("---"))
+console.log(arrayDeLuis.join(" - "))
+
+
+// FIND
+const users = [
+  {id: 1, name: "Ger"},
+  {id: 2, name: "Luis"},
+  {id: 3, name: "Ana"},
+  {id: 4, name: "Julia"}
+]
+
+const user  = users.find( item => {
+  return item.id === 3
+})
+console.log(user.name)
+console.log(users[2].name)
+
+// MAP
+const paraMapear = [1,2,3,4,5];
+const paraMapearMOdificado = paraMapear.map( patata => patata * 2)
+console.log("paraMapearMOdificado", paraMapearMOdificado)
+
+const usersMap = users.map( item => {
+  return item.id
+})
+
+console.log("usersMap", usersMap)
+
+// FILTER
+const usuariosFiltrados = users.filter( linea => linea.id === 3)
+console.log("usuariosFiltrados", usuariosFiltrados)
+
+const usuariosBorrados = users.filter( user => user.id !== 2 )
+
+// REDUCE
+const numerosParaReducir = [1,2,3,4,5];
+const sumaTotal = numerosParaReducir.reduce( (acumulador, valorActual) => {
+  console.log("acumulador", acumulador)
+  console.log("valorActual", valorActual)
+  return acumulador + valorActual
+}, 0)
+
+console.log("sumaTotal", sumaTotal)
+
+const palabras = ["sol", "luna", "sol", "mar", "luna", "sol"];
+
+const contados = palabras.reduce((acum, palabra) => {
+  console.log("acum", acum);
+  console.log("palabra", palabra);
+  acum[palabra] = (acum[palabra] || 0) + 1;
+  return acum;
+}, {});
+
+console.log("contados", contados);
+
+// METODOS OBJETOS
+const persona = {
+  nombre: "Ger",
+  edad: 30,
+  ciudad: "Madrid"
+}
+
+console.log(Object.keys(persona))    // ["nombre", "edad", "ciudad"]
+console.log(Object.values(persona))  // ["Ger", 30, "Madrid"]
+console.log(Object.entries(persona)) // [ ["nombre", "Ger"], ["edad", 30], ["ciudad", "Madrid"] ]
+
+// FUNCIONES
+// Tradicional
+function saludar(nombre) {
+  console.log("Hola " + nombre)
+  return nombre
+}
+
+const resultado = saludar("Ger");
+console.log(resultado)
+
+// Flecha
+const saludar2 = nombre => {
+  console.log("Hola " + nombre)
+  return nombre
+}
+
+const resultado2 = saludar2("Amelio");
+console.log(resultado2)
